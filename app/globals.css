@@ -2,26 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;700&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%); /* White to Green Gradient */
+  --foreground: #171717; /* Adjust as needed */
 }
 
+/* Remove dark mode background if not needed */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%); /* Keep same gradient for dark mode */
+    --foreground: #062a4d;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', 'Montserrat', Arial, Helvetica, sans-serif; /* Use imported fonts */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Glow effect for the title */
+.glow-effect {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 255, 255, 0.6);
+}
+
+/* Neon text effect for the links */
+.neon-text {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3);
 }
